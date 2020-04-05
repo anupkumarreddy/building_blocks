@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Items</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.slimscroll.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" charset="utf8"
+            src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body class="building-blocks-body">
+<div class="container-fluid">
+    <div class="row">
+        <div class="offset-md-2 col-md-8 building-blocks-glass">
+            <div class="row">
+                <p class="h3 text-center"> Shopping Items </p>
+            </div>
+            <div class="row">
+                <div class="col-md-8 building-blocks-glass">
+                    <div class="building-blocks-offset-3">
+                        <table id="debts_table" class="table table-sm table-hover table-dark table-striped">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Amount</th>
+                                <th>Bought</th>
+                             </tr>
+                            </thead>
+                            <tdata>
+                                {% for item in all_items %}
+                                    <tr class="bg-mattBlackLight">
+                                        <td class="bg-mattBlackLight">{{ item.item_name }}</td>
+                                        <td class="bg-mattBlackLight">{{ item.item_amount }}</td>
+                                        <td class="bg-mattBlackLight">{{ item.item_bought }}</td>
+                                    </tr>
+                                {% endfor %}
+                             </tdata>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
