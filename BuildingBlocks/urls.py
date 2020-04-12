@@ -1,9 +1,11 @@
 from django.contrib import admin
 from django.urls import path
+from django.urls import include
 from .views import MonthlyRentsView, DebtsView, ShoppingView, MainView, TenantsView, CardsView
 from .views import AssetsView, TasksView, IncomeView, ExpenseView, RecurringExpenseView, RecurringIncomeView
 
 urlpatterns = [
+    #path('accounts/', include('django.contrib.auth.urls')),
     path('', MainView.as_view(), name='home'),
     path('shopping/', ShoppingView.as_view(), name='shopping_default'),
     path('shopping/<int:shopping_id>', ShoppingView.as_view(), name='shopping'),

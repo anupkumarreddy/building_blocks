@@ -6,6 +6,8 @@ from django.db.models import Sum
 import datetime, calendar
 from django.shortcuts import redirect
 from .forms import ShoppingFormSet, WishListItemForm
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 
 
 class CurrencyToNameConverter:
@@ -21,6 +23,7 @@ class CurrencyToNameConverter:
             return str(number)
 
 
+@method_decorator(login_required, name='dispatch')
 class MainView(View):
     template_name = "app/index.html"
 

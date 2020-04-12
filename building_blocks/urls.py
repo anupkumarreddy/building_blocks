@@ -21,6 +21,7 @@ admin.site.site_header = "Building Blocks"
 admin.site.site_title = "Building Blocks Portal"
 admin.site.index_title = "Welcome to BuildingBlocks Portal"
 urlpatterns = [
+    path('accounts/', include('django.contrib.auth.urls')),
     path('bb/', include('BuildingBlocks.urls')),
     path('admin/', admin.site.urls),
 ]
